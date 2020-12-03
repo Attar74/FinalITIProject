@@ -1,10 +1,9 @@
-import Ninjas from './Ninjas';
 import Item from './item';
+import ListItems from './listItems';
 import WishList from './wishList';
 import Header from './Header';
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import AddNinja from './addNinja';
 import {BrowserRouter as Router, Route, Link ,Switch} from 'react-router-dom';
 
 
@@ -59,16 +58,6 @@ class App extends Component{
                       </>
                   )
                 }} path="/" exact />
-              <Route component={
-                ()=>{                 
-                  return (
-                      <>
-                        <h1 className="m-2 text-center">My Cart</h1>  
-                        <Ninjas deleteNinja={this.deleteNinja} ninjas={this.state.ninjas}/>
-                      </>
-                  )
-                }
-                } path="/Ninjas" exact />
 
                 <Route component={
                 ()=>{
@@ -80,15 +69,6 @@ class App extends Component{
                 }
                 } path="/WishList" exact />
 
-                           
-              <Route component={()=>{
-                  return (
-                      <>  
-                        <AddNinja addNinja = {this.addNinja}/>      
-                      </>
-                  )
-                }} path="/AddNinja" exact />
-
                 <Route component={()=>{
                   return (
                       <>  
@@ -97,7 +77,14 @@ class App extends Component{
                   )
                 }} path="/Item" exact />
 
-               
+                <Route component={()=>{
+                  return (
+                      <>  
+                        <ListItems ninjas={this.state.ninjas}/>      
+                      </>
+                  )
+                }} path="/listItems" exact />
+
             </Router>  
         </>
     );

@@ -16,7 +16,7 @@ render(){
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <Link class="nav-link" to="/Ninjas">My Cart <span class="sr-only">(current)</span></Link>
+                        <Link class="nav-link" to="/listItems">listItems <span class="sr-only">(current)</span></Link>
                     </li>
                      <li class="nav-item active">
                         <Link class="nav-link" to="/Wishlist">WishList<span class="sr-only">(current)</span></Link>

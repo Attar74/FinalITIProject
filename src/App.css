@@ -58,12 +58,17 @@
   transform: scale(1.1);
   cursor: pointer;
 }
+
+.pImg2{
+  margin: 100px 0;
+}
+
 button.add{
-  background-color: orange;
+  background-color: rgb(253, 128, 36);
 }
 button.add:hover{
   background-color: transparent;
-  border: 1px solid orange;
+  border: 1px solid rgb(253, 128, 36);
 }
 .love:hover{
   cursor: pointer;
@@ -81,4 +86,7 @@ button.add:hover{
 }
 .react-multi-carousel-dot--active button {
   background-color:rgba(0,0,0,.7);
+}
+.wish i {
+  color: rgb(4, 4, 196);
 }

@@ -18,6 +18,7 @@ import {
     HeartOutlined  
   } from '@ant-design/icons';
 import { render } from '@testing-library/react';
+import WishList from './wishList';
 
 
 const responsive = {
@@ -40,7 +41,7 @@ const responsive = {
     }
   };
 
-const wishList = ({ninjas, deleteNinja})=> {
+const ListItems = ({ninjas, deleteNinja})=> {
 
     const ninjaList = ninjas.map((ninja, i) => {
         const imgLogos = [Logo, Logo1, Logo2, Logo3, Logo4, Logo, Logo1, Logo2, Logo3, Logo4];
@@ -93,40 +94,29 @@ const wishList = ({ninjas, deleteNinja})=> {
                             </p>;
                 break;
             }
-
-            // let filled = `<StarFilled style={{ fontSize: '16px', color: "orange" }}/>`;
-            // let empty = `<StarTwoTone twoToneColor="orange"/>`;
-            // let res = ``;
-            // for(let i = 0; i < ninja.rating; i++){
-            //     res += filled
-            // }
-            // console.log(res);
-            // render (){
-            //     return(
-            //         <></>
-            //     )
-            // }
-
-            
         })
        
     return (true) ? (    
-                <div class="mb-5 m-0">
+                <div class="row col-6 col-lg-4 border border-1 m-0">
                     <div class="p-3">
-                        <div class="border border-1">
+                        <div class="">
                             <span class="love">
-                                <HeartOutlined  style = {{fontSize: '18px', color: 'darkblue', backgroundColor: "#eee", margin: '2px', padding:'1px'}}/>
                             </span>
                             <Link to={{pathname:"/item", state: ninja}}>
-                                <img class="image-fluid w-100 pImg p-3" src={imgLogos[i]} alt=""/>
+                                <img class="image-fluid w-100 pImg pImg2" src={imgLogos[i]} alt=""/>
                             </Link>
                         </div>
                         <Link to={{pathname:"/item", state: ninja}}>
                             <p class="font-weight-bold text-dark">{ninja.name}</p>
                         </Link>
-                        <p class="font-weight-bold">${ninja.price}</p>
                         <p class="">{ rate() }</p>
-                        <button class="btn add col-12" >Add to Bag</button>
+                        <p class="font-weight-bold">${ninja.price}</p>
+                        <button class="btn add col-12 p-2" >Add to Bag</button>
+                        <button class="btn wish col-12 text-left p-0 pt-2" >
+                            <i class="far fa-heart pr-2"></i>
+                            <span class="align-self-center">Add to Wishlist</span>
+                        </button>
+
                     </div>
                 </div>
         ) : null;
@@ -134,28 +124,12 @@ const wishList = ({ninjas, deleteNinja})=> {
     
     
     return(
-        <div class="m-5 p-5">
-            <h1 className="m-2">Featured sets</h1>  
-            <Carousel responsive={responsive}
-                        swipeable={true}
-                        draggable={true}
-                        showDots={true}
-                        ssr={false} // means to render carousel on server-side.
-                        infinite={false}
-                        //autoPlaySpeed={1000}
-                        keyBoardControl={true}
-                        //customTransition="all 1"
-                        //transitionDuration={500}
-                        //containerClass="carousel-container"
-                        //removeArrowOnDeviceType={["tablet", "mobile"]}
-                        //dotListClass="custom-dot-list-style"
-                        //itemClass="carousel-item-padding-40-px"
-                        slidesToSlide = "2"
-                        >
+        <>
+            <div class="row offset-lg-3 col-lg-9 col-12 p-5 m-xs-0">
                 {ninjaList}
-            </Carousel>;
-        </div>
+            </div>
+        </>
     )
 }
 
-export default withRouter(wishList);
+export default withRouter(ListItems);
