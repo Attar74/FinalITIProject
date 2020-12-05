@@ -1,6 +1,7 @@
 import Item from './item';
 import ListItems from './listItems';
 import WishList from './wishList';
+import Vip from './vip';
 import Header from './Header';
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -84,6 +85,14 @@ class App extends Component{
                       </>
                   )
                 }} path="/listItems" exact />
+
+                <Route component={()=>{
+                  return (
+                      <>  
+                        <Vip />      
+                      </>
+                  )
+                }} path="/vip" exact />
 
             </Router>  
         </>

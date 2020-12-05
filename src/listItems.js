@@ -125,7 +125,7 @@ const ListItems = ({ninjas, deleteNinja})=> {
     
     return(
         <>
-            <div class="row offset-lg-3 col-lg-9 col-12 p-5 m-xs-0">
+            <div class="row offset-lg-4 col-lg-8 col-12 p-5 m-xs-0">
                 {ninjaList}
             </div>
         </>
