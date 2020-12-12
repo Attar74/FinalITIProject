@@ -19,26 +19,10 @@ import heart from "./heart.jpg";
 import elephant from "./elephant.png";
 import box from "./box.jpg";
 import model from "./model.png";
-
-
-
-
-
 import RewardsLego from  "./Quicklink_Rewards.png";
-
 import {BrowserRouter as Router, Route, Link ,withRouter} from 'react-router-dom';
 import './App.css';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import {
-    StarOutlined,
-    StarFilled,
-    StarTwoTone,
-    HeartTwoTone,
-    HeartOutlined  
-  } from '@ant-design/icons';
-import { render } from '@testing-library/react';
-
 
 
 const Vip = ()=> {

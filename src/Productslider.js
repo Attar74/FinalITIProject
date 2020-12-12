@@ -1,23 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Logo from "./21042.jpeg";
-import Logo1 from "./21043.jpeg";
-import Logo2 from "./21045.jpeg";
-import Logo3 from "./21046.jpeg";
-import Logo4 from "./40367.jpeg";
 import {BrowserRouter as Router, Route, Link ,withRouter} from 'react-router-dom';
 import './App.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {
-    StarOutlined,
     StarFilled,
     StarTwoTone,
-    HeartTwoTone,
     HeartOutlined  
   } from '@ant-design/icons';
-import { render } from '@testing-library/react';
 
 
 const responsive = {
@@ -40,13 +32,11 @@ const responsive = {
     }
   };
 
-const wishList = ({ninjas, deleteNinja})=> {
+const Productslider = ({products})=> {
 
-    const ninjaList = ninjas.map((ninja, i) => {
-        const imgLogos = [Logo, Logo1, Logo2, Logo3, Logo4, Logo, Logo1, Logo2, Logo3, Logo4];
-
+    const productList = products.map((product, i) => {
         let rate = (()=>{
-            switch(ninja.rating){
+            switch(product.rating){
                 case 1: 
                     return <p> 
                                 <StarFilled style={{ fontSize: '16px', color: "orange" }}/>
@@ -117,14 +107,14 @@ const wishList = ({ninjas, deleteNinja})=> {
                             <span class="love">
                                 <HeartOutlined  style = {{fontSize: '18px', color: 'darkblue', backgroundColor: "#eee", margin: '2px', padding:'1px'}}/>
                             </span>
-                            <Link to={{pathname:"/item", state: ninja}}>
-                                <img class="image-fluid w-100 pImg p-3" src={imgLogos[i]} alt=""/>
+                            <Link to={{pathname:"/item", state: product}}>
+                                <img class="image-fluid w-100 pImg p-3" src={product.imgSrc} alt=""/>
                             </Link>
                         </div>
-                        <Link to={{pathname:"/item", state: ninja}}>
-                            <p class="font-weight-bold text-dark">{ninja.name}</p>
+                        <Link to={{pathname:"/item", state: product}}>
+                            <p class="font-weight-bold text-dark">{product.name}</p>
                         </Link>
-                        <p class="font-weight-bold">${ninja.price}</p>
+                        <p class="font-weight-bold">${product.price}</p>
                         <p class="">{ rate() }</p>
                         <button class="btn add col-12" >Add to Bag</button>
                     </div>
@@ -152,10 +142,10 @@ const wishList = ({ninjas, deleteNinja})=> {
                         //itemClass="carousel-item-padding-40-px"
                         slidesToSlide = "2"
                         >
-                {ninjaList}
+                {productList}
             </Carousel>;
         </div>
     )
 }
 
-export default withRouter(wishList);
+export default withRouter(Productslider);

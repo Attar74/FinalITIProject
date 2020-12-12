@@ -19,7 +19,7 @@ render(){
                         <Link class="nav-link" to="/listItems">listItems <span class="sr-only">(current)</span></Link>
                     </li>
                      <li class="nav-item active">
-                        <Link class="nav-link" to="/Wishlist">Slider<span class="sr-only">(current)</span></Link>
+                        <Link class="nav-link" to="/Productslider">Slider<span class="sr-only">(current)</span></Link>
                     </li>
                     <li class="nav-item">
                         <Link class="nav-link" to={{pathname: "/vip"}}>VIP Page</Link>

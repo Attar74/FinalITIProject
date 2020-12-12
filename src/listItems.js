@@ -8,17 +8,11 @@ import Logo3 from "./21046.jpeg";
 import Logo4 from "./40367.jpeg";
 import {BrowserRouter as Router, Route, Link ,withRouter} from 'react-router-dom';
 import './App.css';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {
-    StarOutlined,
     StarFilled,
     StarTwoTone,
-    HeartTwoTone,
-    HeartOutlined  
   } from '@ant-design/icons';
-import { render } from '@testing-library/react';
-import WishList from './wishList';
 
 
 const responsive = {
@@ -41,13 +35,13 @@ const responsive = {
     }
   };
 
-const ListItems = ({ninjas, deleteNinja})=> {
+const ListItems = ({products})=> {
 
-    const ninjaList = ninjas.map((ninja, i) => {
+    const productList = products.map((product, i) => {
         const imgLogos = [Logo, Logo1, Logo2, Logo3, Logo4, Logo, Logo1, Logo2, Logo3, Logo4];
 
         let rate = (()=>{
-            switch(ninja.rating){
+            switch(product.rating){
                 case 1: 
                     return <p> 
                                 <StarFilled style={{ fontSize: '16px', color: "orange" }}/>
@@ -102,15 +96,15 @@ const ListItems = ({ninjas, deleteNinja})=> {
                         <div class="">
                             <span class="love">
                             </span>
-                            <Link to={{pathname:"/item", state: ninja}}>
+                            <Link to={{pathname:"/item", state: product}}>
                                 <img class="image-fluid w-100 pImg pImg2" src={imgLogos[i]} alt=""/>
                             </Link>
                         </div>
-                        <Link to={{pathname:"/item", state: ninja}}>
-                            <p class="font-weight-bold text-dark">{ninja.name}</p>
+                        <Link to={{pathname:"/item", state: product}}>
+                            <p class="font-weight-bold text-dark">{product.name}</p>
                         </Link>
                         <p class="">{ rate() }</p>
-                        <p class="font-weight-bold">${ninja.price}</p>
+                        <p class="font-weight-bold">${product.price}</p>
                         <button class="btn add col-12 p-2" >Add to Bag</button>
                         <button class="btn wish col-12 text-left p-0 pt-2" >
                             <i class="far fa-heart pr-2"></i>
@@ -126,7 +120,7 @@ const ListItems = ({ninjas, deleteNinja})=> {
     return(
         <>
             <div class="row offset-lg-4 col-lg-8 col-12 p-5 m-xs-0">
-                {ninjaList}
+                {productList}
             </div>
         </>
     )

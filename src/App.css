@@ -138,9 +138,6 @@ button.earnBtn{
 .earnPointsIcons li{
   position: relative;
 }
-/* .earnPointsIcons li .description{
-  margin-bottom: 10px;
-} */
 
 .earnPointsIcons li .earnBtn{
   position: absolute;
